@@ -11,9 +11,42 @@ To write a C program to create a function to find the greatest number
 5.	Call the max_of_four function with the input integers and store the result in the greater variable
  
 ## Program:
+```c
+#include <stdio.h>
 
+int max_of_four(int n1, int n2, int n3, int n4)
+{
+    int greater;
+
+    if (n1 >= n2 && n1 >= n3 && n1 >= n4)
+        greater = n1;
+    else if (n2 >= n1 && n2 >= n3 && n2 >= n4)
+        greater = n2;
+    else if (n3 >= n1 && n3 >= n2 && n3 >= n4)
+        greater = n3;
+    else
+        greater = n4;
+
+    return greater;
+}
+
+int main()
+{
+    int n1, n2, n3, n4, greater;
+
+    printf("Enter four integers: ");
+    scanf("%d %d %d %d", &n1, &n2, &n3, &n4);
+
+    greater = max_of_four(n1, n2, n3, n4);
+
+    printf("Greatest number = %d", greater);
+
+    return 0;
+}
+```
 
 ## Output:
+<img width="362" height="92" alt="image" src="https://github.com/user-attachments/assets/b036264d-fbc7-4123-a4fc-934c77aa1ec9" />
 
 ## Result:
 Thus, the program  that create a function to find the greatest number is verified successfully.
@@ -34,9 +67,56 @@ To write a C program to print the maximum values for the AND, OR and XOR compari
 7.	Call the calculate_the_max function with input values.
  
 ## Program:
+```c
+#include <stdio.h>
 
+void calculate_the_max(int n, int k)
+{
+    int a = 0, o = 0, x = 0;
+    int i, j;
+    int value;
+
+    for (i = 1; i <= n; i++)
+    {
+        for (j = i + 1; j <= n; j++)
+        {
+            value = i & j;
+
+            if (value < k && value > a)
+                a = value;
+
+            value = i | j;
+
+            if (value < k && value > o)
+                o = value;
+
+            value = i ^ j;
+
+            if (value < k && value > x)
+                x = value;
+        }
+    }
+
+    printf("%d\n", a);
+    printf("%d\n", o);
+    printf("%d\n", x);
+}
+
+int main()
+{
+    int n, k;
+
+    printf("Enter n and k: ");
+    scanf("%d %d", &n, &k);
+
+    calculate_the_max(n, k);
+
+    return 0;
+}
+```
 
 ## Output:
+<img width="225" height="137" alt="image" src="https://github.com/user-attachments/assets/376327a7-a93e-4e9e-9e8e-b122088260d0" />
 
 ## Result:
 Thus, the program to print the maximum values for the AND, OR and XOR comparisons
@@ -56,7 +136,41 @@ To write a C program to write the logic for the requests
 5.	Use a for loop to iterate over the queries.
  
 ## Program:
+```c
+#include <stdio.h>
 
+int main()
+{
+    int noshel, noque;
+    int i, x, y;
+    int shelarr[100][100];
+    int nobookarr[100] = {0};
+
+    scanf("%d %d", &noshel, &noque);
+
+    for (i = 0; i < noque; i++)
+    {
+        int query;
+        scanf("%d %d %d", &query, &x, &y);
+
+        if (query == 1)
+        {
+            shelarr[x][nobookarr[x]] = y;
+            nobookarr[x]++;
+        }
+        else if (query == 2)
+        {
+            printf("%d\n", shelarr[x][y]);
+        }
+        else if (query == 3)
+        {
+            printf("%d\n", nobookarr[x]);
+        }
+    }
+
+    return 0;
+}
+```
 
 ## Output:
 
@@ -80,7 +194,32 @@ To write a C program print the sum of the integers in the array.
 
 
 ## Program:
+```c
+#include <stdio.h>
 
+int main()
+{
+    int n, i;
+    int sum = 0;
+
+    printf("Enter the number of integers: ");
+    scanf("%d", &n);
+
+    int a[n];
+
+    printf("Enter the integers:\n");
+
+    for (i = 0; i < n; i++)
+    {
+        scanf("%d", &a[i]);
+        sum = sum + a[i];
+    }
+
+    printf("Sum = %d", sum);
+
+    return 0;
+}
+```
 
 ## Output:
 
