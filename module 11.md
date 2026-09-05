@@ -142,29 +142,38 @@ To write a C program to write the logic for the requests
 int main()
 {
     int noshel, noque;
-    int i, x, y;
     int shelarr[100][100];
     int nobookarr[100] = {0};
+    int i, query, x, y;
 
+    printf("Enter number of shelves and queries: ");
     scanf("%d %d", &noshel, &noque);
 
     for (i = 0; i < noque; i++)
     {
-        int query;
+        printf("\nEnter query type, shelf number and book number: ");
         scanf("%d %d %d", &query, &x, &y);
 
         if (query == 1)
         {
             shelarr[x][nobookarr[x]] = y;
             nobookarr[x]++;
+
+            printf("Book added successfully.\n");
         }
         else if (query == 2)
         {
-            printf("%d\n", shelarr[x][y]);
+            printf("Book number at shelf %d, position %d = %d\n",
+                   x, y, shelarr[x][y]);
         }
         else if (query == 3)
         {
-            printf("%d\n", nobookarr[x]);
+            printf("Number of books in shelf %d = %d\n",
+                   x, nobookarr[x]);
+        }
+        else
+        {
+            printf("Invalid query.\n");
         }
     }
 
