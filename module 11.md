@@ -182,6 +182,7 @@ int main()
 ```
 
 ## Output:
+<img width="557" height="475" alt="image" src="https://github.com/user-attachments/assets/9c16168c-ee0a-4355-a1b8-2f4da56f602d" />
 
 ## Result:
 Thus, the program to write the logic for the requests is verified successfully.
@@ -231,6 +232,7 @@ int main()
 ```
 
 ## Output:
+<img width="336" height="150" alt="image" src="https://github.com/user-attachments/assets/a2277217-796e-46d4-b948-5a4fb5b94a6c" />
 
 ## Result:
 Thus, the program prints the sum of the integers in the array is verified successfully.
@@ -252,11 +254,48 @@ o	If a character is not a space, it may belong to a word. If it's the first non-
 5.	Display the result: After processing the sentence, output the total word count.
 
 ## Program:
+```c
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
 
+int main()
+{
+    char sentence[200];
+    int i, words = 0;
+    int inWord = 0;
+
+    printf("Enter a sentence: ");
+    fgets(sentence, sizeof(sentence), stdin);
+
+    for (i = 0; sentence[i] != '\0'; i++)
+    {
+        if (!isspace(sentence[i]))
+        {
+            if (inWord == 0)
+            {
+                words++;
+                inWord = 1;
+            }
+        }
+        else
+        {
+            inWord = 0;
+        }
+    }
+
+    printf("Number of words = %d", words);
+
+    return 0;
+}
+```
 
 ## Output:
+<img width="480" height="102" alt="image" src="https://github.com/user-attachments/assets/a0bcb8fb-1739-4b8c-8d2e-e8ea680282c9" />
 
 ## Result:
 Thus, the program that counts the number of words in a given sentence is verified 
+
+
 successfully.
 
