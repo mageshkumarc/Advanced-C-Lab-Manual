@@ -17,10 +17,65 @@ To write a C program print the lowercase English word corresponding to the numbe
 4.	Exit the program.
  
 ## Program:
+```c
+#include <stdio.h>
 
+int main()
+{
+    int n;
+
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    switch (n)
+    {
+        case 5:
+            printf("seventy one");
+            break;
+
+        case 6:
+            printf("seventy two");
+            break;
+
+        case 7:
+            printf("seventy three");
+            break;
+
+        case 8:
+            printf("seventy four");
+            break;
+
+        case 9:
+            printf("seventy five");
+            break;
+
+        case 10:
+            printf("seventy six");
+            break;
+
+        case 11:
+            printf("seventy seven");
+            break;
+
+        case 12:
+            printf("seventy eight");
+            break;
+
+        case 13:
+            printf("seventy nine");
+            break;
+
+        default:
+            printf("Greater than 13");
+    }
+
+    return 0;
+}
+```
 
 ## Output:
-
+<img width="205" height="87" alt="image" src="https://github.com/user-attachments/assets/1fb46e1e-8e0c-42ae-b050-cb15324cafe3" />
+<img width="207" height="92" alt="image" src="https://github.com/user-attachments/assets/38ed261e-213d-4aa6-955d-60d530524bec" />
 
 ## Result:
 Thus, the program is verified successfully
@@ -40,10 +95,38 @@ To write a C program to print ten space-separated integers in a single line deno
 6.	End
  
 ## Program:
+```c
+#include <stdio.h>
 
+int main()
+{
+    char a[50];
+    int c, h, i;
+
+    printf("Enter a string: ");
+    scanf("%s", a);
+
+    for (h = 0; h <= 3; h++)
+    {
+        c = 0;
+
+        for (i = 0; a[i] != '\0'; i++)
+        {
+            if (a[i] == h + '0')
+            {
+                c++;
+            }
+        }
+
+        printf("%d ", c);
+    }
+
+    return 0;
+}
+```
 
 ## Output:
-
+<img width="270" height="85" alt="image" src="https://github.com/user-attachments/assets/3756c81e-62eb-42e3-aebb-2ad7603c0ad8" />
 
 ## Result:
 Thus, the program is verified successfully
@@ -67,10 +150,89 @@ Free the memory allocated for each string in s Free the memory allocated for s
 7.	End
  
 ## Program:
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
+void swap(char *x, char *y)
+{
+    char temp = *x;
+    *x = *y;
+    *y = temp;
+}
+
+void permute(char *str, int left, int right)
+{
+    int i;
+
+    if (left == right)
+    {
+        printf("%s\n", str);
+        return;
+    }
+
+    for (i = left; i <= right; i++)
+    {
+        swap(&str[left], &str[i]);
+        permute(str, left + 1, right);
+        swap(&str[left], &str[i]);
+    }
+}
+
+int main()
+{
+    char **s;
+    int n, i;
+
+    printf("Enter the number of strings: ");
+    scanf("%d", &n);
+
+    /* Dynamically allocate memory for array of strings */
+    s = (char **)malloc(n * sizeof(char *));
+
+    if (s == NULL)
+    {
+        printf("Memory allocation failed.");
+        return 1;
+    }
+
+    /* Allocate memory for each string */
+    for (i = 0; i < n; i++)
+    {
+        s[i] = (char *)malloc(50 * sizeof(char));
+
+        if (s[i] == NULL)
+        {
+            printf("Memory allocation failed.");
+            return 1;
+        }
+
+        printf("Enter string %d: ", i + 1);
+        scanf("%49s", s[i]);
+    }
+
+    /* Permutation generation */
+    for (i = 0; i < n; i++)
+    {
+        printf("\nPermutations of %s:\n", s[i]);
+        permute(s[i], 0, strlen(s[i]) - 1);
+    }
+
+    /* Free memory */
+    for (i = 0; i < n; i++)
+    {
+        free(s[i]);
+    }
+
+    free(s);
+
+    return 0;
+}
+```
 
 ## Output:
-
+<img width="321" height="552" alt="image" src="https://github.com/user-attachments/assets/1b59c080-f2c7-4b65-92e7-6bf7f662ce86" />
 
 ## Result:
 Thus, the program is verified successfully
@@ -91,10 +253,46 @@ To write a C program to print a pattern of numbers from 1 to n as shown below.
 7.	End
  
 ## Program:
+```c
+#include <stdio.h>
 
+int main()
+{
+    int n, i, j, min;
+    int len;
+
+    printf("Enter the value of n: ");
+    scanf("%d", &n);
+
+    len = n * 2 - 1;
+
+    for (i = 0; i < len; i++)
+    {
+        for (j = 0; j < len; j++)
+        {
+            min = i;
+
+            if (j < min)
+                min = j;
+
+            if (len - 1 - i < min)
+                min = len - 1 - i;
+
+            if (len - 1 - j < min)
+                min = len - 1 - j;
+
+            printf("%d ", n - min);
+        }
+
+        printf("\n");
+    }
+
+    return 0;
+}
+```
 
 ## Output:
-
+<img width="282" height="408" alt="image" src="https://github.com/user-attachments/assets/3eece445-8f41-48ee-a556-d3db2dafd472" />
 
 ## Result:
 Thus, the program is verified successfully
@@ -106,7 +304,6 @@ Thus, the program is verified successfully
 To write a C program that calculates the square of a number using a function that does not take any arguments, but returns the square of the number.
 
 ## Algorithm:
-
 1.	Start.
 2.	Define a function square() with no parameters. This function will return an integer value.
 3.	Inside the function:
@@ -119,16 +316,33 @@ o	Call the square() function and display the result.
 5.	End.
 
 ## Program:
+```c
+#include <stdio.h>
 
+int square()
+{
+    int n;
+
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    return n * n;
+}
+
+int main()
+{
+    int result;
+
+    result = square();
+
+    printf("Square = %d", result);
+
+    return 0;
+}
+```
 
 ## Output:
-
+<img width="220" height="82" alt="image" src="https://github.com/user-attachments/assets/32265292-b1b8-414a-b579-96c114fad423" />
 
 ## Result:
 Thus, the program is verified successfully
-
-
-
-
-
-
