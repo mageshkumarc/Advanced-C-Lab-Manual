@@ -123,7 +123,7 @@ Thus, the program to print the maximum values for the AND, OR and XOR comparison
 is verified successfully.
 
 
-## EXP NO:23 C PROGRAM TO WRITE THE LOGIC FOR THE REQUESTS
+# EXP NO:23 C PROGRAM TO WRITE THE LOGIC FOR THE REQUESTS
 
 ## Aim:
 To write a C program to write the logic for the requests
@@ -236,7 +236,6 @@ int main()
 
 ## Result:
 Thus, the program prints the sum of the integers in the array is verified successfully.
-
 
  
 # EXP NO 25: C PROGRAM TO COUNT THE NUMBER OF WORDS IN A SENTENCE
