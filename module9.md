@@ -53,6 +53,7 @@ int main()
 }
 ```
 ## Output:
+<img width="217" height="215" alt="image" src="https://github.com/user-attachments/assets/9298c7b6-6cce-40c8-b6f0-fcc618b3ff0b" />
 
 ## Result:
 Thus, the program to display stack elements using an array is verified successfully.
@@ -118,6 +119,7 @@ int main()
 }
 ```
 ## Output:
+<img width="417" height="357" alt="image" src="https://github.com/user-attachments/assets/5adca825-9ace-47eb-9a0e-9a25a9d02309" />
 
 ## Result:
 Thus, the program to push the given element in to a stack using array is verified successfully
@@ -179,6 +181,7 @@ int main()
 ```
 
 ## Output:
+<img width="206" height="82" alt="image" src="https://github.com/user-attachments/assets/4a1cebd6-6f84-49eb-af92-c3182254f6fe" />
 
 ## Result:
 Thus, the program to display queue elements using array is verified successfully.
@@ -251,6 +254,7 @@ int main()
 ```
 
 ## Output:
+<img width="427" height="311" alt="image" src="https://github.com/user-attachments/assets/03a56ae8-8052-4fbf-936d-e665cb6f126a" />
 
 ## Result:
 Thus, the program to insert elements in queue using array is verified successfully.
@@ -335,6 +339,7 @@ int main()
 ```
 
 ## Output:
+<img width="250" height="262" alt="image" src="https://github.com/user-attachments/assets/3e9e7389-7ee7-46e4-9cc7-52006ca91057" />
 
 ## Result:
 Thus, the function that deletes an element from a queue implemented using an array is verified successfully.
